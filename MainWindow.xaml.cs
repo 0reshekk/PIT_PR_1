@@ -110,7 +110,7 @@ namespace PIT_PR_1
             }
             else if (RB_1.IsChecked == false && RB_2.IsChecked == false && RB_3.IsChecked == false)
             {
-                MessageBox.Show("Выберите хотя-бы одну штуку сам хз зачем но надо", "Ошибочка");
+                MessageBox.Show("Выберите математическую функцию!", "Ошибочка");
                 flag = false;
             }
 

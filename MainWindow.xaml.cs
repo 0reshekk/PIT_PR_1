@@ -97,6 +97,7 @@ namespace PIT_PR_1
             X_TextBox.IsEnabled = true;
             Y_TextBox.IsEnabled = true;
             flag = true;
+
             if (X_TextBox.Text == "" || Y_TextBox.Text == "")
             {
                 MessageBox.Show("Заполните все поля!", "Ошибочка");
@@ -119,7 +120,6 @@ namespace PIT_PR_1
                 else if (Convert.ToInt32(X_TextBox.Text) * Convert.ToInt32(Y_TextBox.Text) < 0) Solution_2();
                 else if (Convert.ToInt32(X_TextBox.Text) * Convert.ToInt32(Y_TextBox.Text) == 0) Solution_3();
 
-                //Solve_TextBox.Text = "ответ";
                 X_TextBox.IsEnabled = false;
                 Y_TextBox.IsEnabled = false;
             }
@@ -141,12 +141,7 @@ namespace PIT_PR_1
 
         private void MainWindow_Closing(object sender, CancelEventArgs e)
         {
-            var exitConfirmation = MessageBox.Show(
-                "Вы действительно хотите выйти?  :(",
-                "Пока-пока",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question);
-
+            var exitConfirmation = MessageBox.Show("Вы действительно хотите выйти?  :(", "Пока-пока", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (exitConfirmation == MessageBoxResult.No) e.Cancel = true; // Отменяем закрытие окна
         }
     }

@@ -24,7 +24,7 @@ namespace PIT_PR_1
     public partial class MainWindow : Window
     {
         bool flag = true;
-        Regex onlyNumbers = new Regex(@"^-?\d+$");
+        Regex onlyNumbers = new Regex(@"^-?(\d+(,\d+)?)$");
 
         public MainWindow()
         {
@@ -116,12 +116,9 @@ namespace PIT_PR_1
 
             if (flag == true)
             {
-                if (Convert.ToInt32(X_TextBox.Text) * Convert.ToInt32(Y_TextBox.Text) > 0) Solution_1();
-                else if (Convert.ToInt32(X_TextBox.Text) * Convert.ToInt32(Y_TextBox.Text) < 0) Solution_2();
-                else if (Convert.ToInt32(X_TextBox.Text) * Convert.ToInt32(Y_TextBox.Text) == 0) Solution_3();
-
-                X_TextBox.IsEnabled = false;
-                Y_TextBox.IsEnabled = false;
+                if (Convert.ToDouble(X_TextBox.Text) * Convert.ToDouble(Y_TextBox.Text) > 0) Solution_1();
+                else if (Convert.ToDouble(X_TextBox.Text) * Convert.ToDouble(Y_TextBox.Text) < 0) Solution_2();
+                else if (Convert.ToDouble(X_TextBox.Text) * Convert.ToDouble(Y_TextBox.Text) == 0) Solution_3();
             }
         }
 
